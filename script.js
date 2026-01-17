@@ -1,4 +1,19 @@
 // ============================================
+// LOADING SCREEN
+// ============================================
+
+window.addEventListener('load', () => {
+    const loadingScreen = document.getElementById('loading-screen');
+    setTimeout(() => {
+        loadingScreen.classList.add('fade-out');
+        // Remove from DOM after fade-out completes
+        setTimeout(() => {
+            loadingScreen.remove();
+        }, 500);
+    }, 500); // Show loader for at least 500ms
+});
+
+// ============================================
 // LIVE COUNTDOWN TIMER (CRITICAL)
 // Target: February 19, 2026
 // ============================================
@@ -7,7 +22,7 @@ function updateCountdown() {
     const targetDate = new Date('2026-02-19T00:00:00').getTime();
     const now = new Date().getTime();
     const distance = targetDate - now;
-    
+
     if (distance < 0) {
         document.getElementById('days').textContent = '00';
         document.getElementById('hours').textContent = '00';
@@ -16,13 +31,13 @@ function updateCountdown() {
         document.getElementById('milliseconds').textContent = '00';
         return;
     }
-    
+
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
     const milliseconds = Math.floor((distance % 1000) / 10);
-    
+
     document.getElementById('days').textContent = String(days % 100).padStart(2, '0');
     document.getElementById('hours').textContent = String(hours).padStart(2, '0');
     document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
@@ -35,105 +50,39 @@ setInterval(updateCountdown, 10);
 updateCountdown();
 
 // ============================================
-// GLITCH TEXT EFFECT (MANDATORY)
-// On hover: text turns into random alphabets
-// After ~300ms, morphs back to original
+// TEXT SCRAMBLE EFFECT ON HOVER
 // ============================================
 
-// Apply glitch effect to all glitch-text elements on hover
 document.addEventListener('DOMContentLoaded', () => {
     const glitchElements = document.querySelectorAll('.glitch-text');
-    
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
+
     glitchElements.forEach(element => {
-        // Get original text from data attribute or textContent
-        const originalText = (element.dataset.text || element.textContent).trim();
-        
-        // Store original text
-        element.dataset.originalText = originalText;
-        
-        let glitchInterval = null;
-        let morphInterval = null;
-        let morphTimeout = null;
-        
-        element.addEventListener('mouseenter', () => {
-            // Clear any existing intervals/timeouts
-            if (glitchInterval) {
-                clearInterval(glitchInterval);
-                glitchInterval = null;
-            }
-            if (morphInterval) {
-                clearInterval(morphInterval);
-                morphInterval = null;
-            }
-            if (morphTimeout) {
-                clearTimeout(morphTimeout);
-                morphTimeout = null;
-            }
-            
-            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*';
-            const original = element.dataset.originalText;
-            
-            // Phase 1: Random glitch for ~300ms
-            glitchInterval = setInterval(() => {
-                element.textContent = original
+        const originalText = element.textContent.trim();
+
+        element.addEventListener('mouseenter', function () {
+            let iterations = 0;
+            const maxIterations = originalText.length;
+
+            const interval = setInterval(() => {
+                element.textContent = originalText
                     .split('')
-                    .map((letter) => {
-                        // Preserve spaces and special chars
-                        if (letter === ' ' || letter === '-' || letter === '&' || letter === '•') {
-                            return letter;
+                    .map((char, index) => {
+                        if (index < iterations) {
+                            return originalText[index];
                         }
+                        if (char === ' ') return ' ';
                         return chars[Math.floor(Math.random() * chars.length)];
                     })
                     .join('');
-            }, 50);
-            
-            // After 300ms, stop glitch and morph back
-            morphTimeout = setTimeout(() => {
-                if (glitchInterval) {
-                    clearInterval(glitchInterval);
-                    glitchInterval = null;
+
+                iterations += 1 / 3;
+
+                if (iterations >= maxIterations) {
+                    clearInterval(interval);
+                    element.textContent = originalText;
                 }
-                
-                // Phase 2: Morph back to original character by character
-                let morphIndex = 0;
-                morphInterval = setInterval(() => {
-                    element.textContent = original
-                        .split('')
-                        .map((letter, index) => {
-                            if (index < Math.floor(morphIndex)) {
-                                return original[index];
-                            }
-                            return chars[Math.floor(Math.random() * chars.length)];
-                        })
-                        .join('');
-                    
-                    morphIndex += 0.4;
-                    
-                    if (morphIndex >= original.length) {
-                        clearInterval(morphInterval);
-                        morphInterval = null;
-                        element.textContent = original;
-                    }
-                }, 30);
-            }, 300);
-        });
-        
-        element.addEventListener('mouseleave', () => {
-            // Clear all intervals and timeouts
-            if (glitchInterval) {
-                clearInterval(glitchInterval);
-                glitchInterval = null;
-            }
-            if (morphInterval) {
-                clearInterval(morphInterval);
-                morphInterval = null;
-            }
-            if (morphTimeout) {
-                clearTimeout(morphTimeout);
-                morphTimeout = null;
-            }
-            // Immediately restore original text
-            element.textContent = element.dataset.originalText;
+            }, 30);
         });
     });
 });
@@ -193,13 +142,13 @@ let lastScroll = 0;
 if (header) {
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
-        
+
         if (currentScroll > 100) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
-        
+
         lastScroll = currentScroll;
     });
 }
@@ -292,10 +241,10 @@ createParticles();
 function shuffleGallery() {
     const galleryGrid = document.getElementById('gallery-grid');
     if (!galleryGrid) return;
-    
+
     const items = Array.from(galleryGrid.children);
     const shuffled = items.sort(() => Math.random() - 0.5);
-    
+
     shuffled.forEach(item => galleryGrid.appendChild(item));
 }
 
@@ -312,20 +261,20 @@ const formSuccess = document.getElementById('form-success');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        
+
         // Get form data
         const formData = new FormData(contactForm);
         const data = Object.fromEntries(formData);
-        
+
         // Simulate form submission (replace with actual API call)
         console.log('Form submitted:', data);
-        
+
         // Show success message
         if (formSuccess) {
             formSuccess.classList.remove('hidden');
         }
         contactForm.reset();
-        
+
         // Hide success message after 5 seconds
         setTimeout(() => {
             if (formSuccess) {
