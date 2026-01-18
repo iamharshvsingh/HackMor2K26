@@ -240,8 +240,9 @@
     .hero-content-wrapper {
         flex-direction: column;
         align-items: center;
-        gap: 2.5rem;
-        padding: 2rem 1.5rem;
+        gap: 2rem;
+        padding: 1rem 1.5rem;
+        padding-top: 0;
     }
 
     .hero-center-content {
@@ -255,15 +256,18 @@
         width: 100%;
         max-width: 400px;
         display: flex;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
         align-self: center;
         margin-top: 0;
+        gap: 1.5rem;
     }
 
     .hero-right-content,
     #right-content-panel {
         order: 3;
-        transform: scale(0.95);
+        transform: scale(0.95) translateY(0) !important;
         align-self: center !important;
         margin-top: 0 !important;
         width: 100%;
@@ -276,18 +280,20 @@
 @media (max-width: 768px) {
     .hero-section {
         min-height: auto;
-        padding: 2rem 0;
+        padding: 0.5rem 0 2rem 0;
+        padding-top: 0;
     }
 
     .hero-content-wrapper {
-        gap: 2rem;
-        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+        padding: 0.5rem 1rem 1.5rem 1rem;
+        padding-top: 0;
     }
 
     /* Hero title */
     .hero-title {
-        font-size: 3rem;
-        letter-spacing: 4px;
+        font-size: 2.5rem;
+        letter-spacing: 3px;
         white-space: normal;
         text-align: center;
         word-break: break-word;
@@ -295,75 +301,92 @@
 
     /* Logo and organizer */
     .hero-logo-img {
-        max-width: 260px;
+        max-width: 220px;
+    }
+
+    .hero-logo-container {
+        margin-bottom: 0.5rem;
     }
 
     .organized-by-text {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .univ-box {
-        font-size: 1.1rem;
-        padding: 0.5rem 1.2rem;
+        font-size: 1rem;
+        padding: 0.4rem 1rem;
         white-space: normal;
         text-align: center;
     }
 
     /* Description */
     .hero-description {
-        font-size: 0.9rem;
-        padding: 0 1rem;
+        font-size: 0.85rem;
+        padding: 0 0.5rem;
         line-height: 1.5;
     }
 
     /* Countdown */
     .countdown-container {
-        gap: 0.75rem;
-        margin: 1.5rem 0;
+        gap: 0.5rem;
+        margin: 1rem 0;
     }
 
     .countdown-item {
-        min-width: 70px;
-        padding: 1rem 0.75rem;
+        min-width: 65px;
+        padding: 0.8rem 0.6rem;
     }
 
     .countdown-value {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .countdown-label {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
     }
 
     .countdown-separator {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     /* Hackathon dates */
     .hackathon-dates-heading {
-        font-size: 1.8rem !important;
+        font-size: 1.6rem !important;
         letter-spacing: 2px !important;
     }
 
-    /* Info row */
+    /* Info row - stack on mobile */
     .hero-info-row {
-        gap: 1rem;
+        gap: 0.75rem;
+        flex-direction: column;
+        align-items: center;
     }
 
-    /* Cards */
+    /* Cards - prevent overlap */
     .hero-side-content,
     .hero-right-content {
-        transform: scale(1);
+        transform: none !important;
         width: 100%;
-        max-width: 360px;
+        max-width: 340px;
+    }
+
+    .hero-side-content {
+        gap: 1rem;
     }
 
     .prize-pool-card,
     .hybrid-mode-card,
-    .hacker-pass-card,
+    .hacker-pass-card {
+        width: 100%;
+        max-width: 320px;
+        min-width: unset;
+    }
+
     .team-size-card,
     .registration-deadline-card {
         width: 100%;
+        max-width: 280px;
+        min-width: unset;
     }
 
     /* Buttons */
@@ -371,7 +394,7 @@
         flex-direction: column;
         gap: 1rem;
         width: 100%;
-        max-width: 300px;
+        max-width: 280px;
     }
 
     .btn-primary {
@@ -383,136 +406,183 @@
 
 @media (max-width: 640px) {
     .hero-title {
-        font-size: 2.5rem;
-        letter-spacing: 3px;
+        font-size: 2.2rem;
+        letter-spacing: 2px;
     }
 
     .hero-logo-img {
-        max-width: 220px;
+        max-width: 200px;
     }
 
     .univ-box {
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        padding: 0.4rem 0.9rem;
     }
 
     .hackathon-dates-heading {
-        font-size: 1.5rem !important;
+        font-size: 1.4rem !important;
     }
 
     .countdown-item {
-        min-width: 60px;
-        padding: 0.75rem 0.5rem;
+        min-width: 58px;
+        padding: 0.7rem 0.5rem;
     }
 
     .countdown-value {
-        font-size: 1.75rem;
+        font-size: 1.6rem;
     }
 
     .hero-side-content,
     .hero-right-content {
-        max-width: 320px;
+        max-width: 300px;
+    }
+
+    .prize-pool-card,
+    .hybrid-mode-card,
+    .hacker-pass-card {
+        max-width: 300px;
+        padding: 1.25rem 1rem;
     }
 }
 
 @media (max-width: 480px) {
     .hero-section {
-        padding-top: 1rem;
+        padding-top: 0;
     }
 
     .hero-content-wrapper {
-        padding: 1rem 0.75rem;
-        gap: 1.5rem;
+        padding: 0.5rem 0.75rem 1rem 0.75rem;
+        gap: 1.25rem;
     }
 
     .hero-title {
-        font-size: 2rem;
-        letter-spacing: 2px;
-    }
-
-    .hero-logo-img {
-        max-width: 180px;
-    }
-
-    .organized-by-text {
-        font-size: 0.9rem;
-    }
-
-    .univ-box {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.8rem;
+        font-size: 1.6rem;
         letter-spacing: 1px;
-    }
-
-    .hero-description {
-        font-size: 0.85rem;
-        padding: 0 0.5rem;
-    }
-
-    .hackathon-dates-heading {
-        font-size: 1.3rem !important;
-        letter-spacing: 1px !important;
-    }
-
-    .countdown-container {
-        gap: 0.5rem;
-        margin: 1rem 0;
-    }
-
-    .countdown-item {
-        min-width: 55px;
-        padding: 0.6rem 0.4rem;
-    }
-
-    .countdown-value {
-        font-size: 1.5rem;
-    }
-
-    .countdown-label {
-        font-size: 0.65rem;
-    }
-
-    .countdown-separator {
-        font-size: 1.25rem;
-    }
-
-    .hero-info-row {
-        gap: 0.75rem;
-        flex-direction: column;
-    }
-
-    .team-size-card,
-    .registration-deadline-card {
-        width: 100%;
-        max-width: 280px;
-    }
-}
-
-@media (max-width: 375px) {
-    .hero-title {
-        font-size: 1.75rem;
+        line-height: 1.2;
     }
 
     .hero-logo-img {
         max-width: 160px;
     }
 
-    .univ-box {
+    .hero-logo-container {
+        margin-bottom: 0.25rem;
+        gap: 0.5rem;
+    }
+
+    .organized-by-text {
         font-size: 0.85rem;
+    }
+
+    .univ-box {
+        font-size: 0.8rem;
         padding: 0.35rem 0.7rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-description {
+        font-size: 0.8rem;
+        padding: 0 0.25rem;
     }
 
     .hackathon-dates-heading {
         font-size: 1.2rem !important;
+        letter-spacing: 1px !important;
+    }
+
+    .countdown-container {
+        gap: 0.3rem;
+        margin: 0.75rem 0;
+        flex-wrap: nowrap;
+        padding: 0 0.75rem;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .countdown-item {
-        min-width: 50px;
-        padding: 0.5rem 0.3rem;
+        min-width: 0;
+        flex: 1;
+        max-width: none;
+        padding: 0.4rem 0.2rem;
+        border-width: 1px;
     }
 
     .countdown-value {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
+        margin-bottom: 0.15rem;
+    }
+
+    .countdown-label {
+        font-size: 0.5rem;
+        letter-spacing: 0;
+    }
+
+    .countdown-separator {
+        display: none;
+    }
+
+    .hero-info-row {
+        gap: 0.6rem;
+        flex-direction: column;
+    }
+
+    .team-size-card,
+    .registration-deadline-card {
+        width: 100%;
+        max-width: 260px;
+        padding: 0.8rem 1rem;
+    }
+
+    .hero-side-content {
+        gap: 0.75rem;
+    }
+
+    .prize-pool-card,
+    .hybrid-mode-card,
+    .hacker-pass-card {
+        max-width: 280px;
+        padding: 1rem 0.75rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .hero-title {
+        font-size: 1.4rem;
+        letter-spacing: 0.5px;
+    }
+
+    .hero-logo-img {
+        max-width: 150px;
+    }
+
+    .univ-box {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .hackathon-dates-heading {
+        font-size: 1.1rem !important;
+    }
+
+    .countdown-container {
+        gap: 0.1rem;
+        padding: 0 0.25rem;
+    }
+
+    .countdown-item {
+        padding: 0.3rem 0.15rem;
+    }
+
+    .countdown-value {
+        font-size: 0.9rem;
+    }
+
+    .countdown-label {
+        font-size: 0.4rem;
+    }
+
+    .countdown-separator {
+        font-size: 0.7rem;
     }
 
     .hero-side-content,
@@ -523,36 +593,49 @@
 
 @media (max-width: 320px) {
     .hero-title {
-        font-size: 1.5rem;
-        letter-spacing: 1px;
+        font-size: 1.2rem;
+        letter-spacing: 0;
     }
 
     .hero-logo-img {
-        max-width: 140px;
+        max-width: 130px;
     }
 
     .organized-by-text {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
 
     .univ-box {
-        font-size: 0.75rem;
-        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
     }
 
     .hero-description {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
 
     .hackathon-dates-heading {
-        font-size: 1.1rem !important;
+        font-size: 1rem !important;
+    }
+
+    .countdown-container {
+        gap: 0.05rem;
+        padding: 0 0.15rem;
+    }
+
+    .countdown-item {
+        padding: 0.25rem 0.1rem;
     }
 
     .countdown-value {
-        font-size: 1.2rem;
+        font-size: 0.8rem;
     }
 
     .countdown-label {
+        font-size: 0.35rem;
+    }
+
+    .countdown-separator {
         font-size: 0.6rem;
     }
 }
@@ -671,10 +754,10 @@
 
 .hero-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: 3.8rem;
+    font-size: clamp(1.5rem, 8vw, 3.8rem);
     font-weight: 900;
     color: #00ff88;
-    letter-spacing: 8px;
+    letter-spacing: clamp(2px, 1vw, 8px);
     line-height: 1.1;
     margin-bottom: 1rem;
     position: relative;
@@ -886,7 +969,7 @@
     justify-content: center;
     gap: 1rem;
     margin: 2rem 0;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .countdown-item {
