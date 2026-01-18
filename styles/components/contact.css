@@ -1,3 +1,4 @@
+/* ============================================
    CONTACT SECTION
    ============================================ */
 
@@ -197,101 +198,6 @@
    RESPONSIVE DESIGN
    ============================================ */
 
-@media (max-width: 768px) {
-    #home {
-        flex-direction: column;
-        justify-content: flex-start;
-        padding-top: 100px;
-        /* Space for navbar */
-        height: auto;
-    }
-
-    .partner-cards-container,
-    .college-logos-container {
-        position: relative;
-        top: auto;
-        left: auto;
-        right: auto;
-        width: 100%;
-        justify-content: center;
-        margin-bottom: 1rem;
-        flex-wrap: wrap;
-        z-index: 20;
-    }
-
-    .partner-card {
-        background: rgba(255, 255, 255, 0.9);
-        padding: 0.4rem 0.6rem;
-    }
-
-    .partner-logo,
-    .college-logo {
-        max-height: 50px;
-        max-width: 120px;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-        letter-spacing: 3px;
-    }
-
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .countdown-container {
-        gap: 0.5rem;
-    }
-
-    .countdown-item {
-        min-width: 70px;
-        padding: 1rem 0.75rem;
-    }
-
-    .countdown-value {
-        font-size: 1.8rem;
-    }
-
-    .countdown-ms {
-        font-size: 1.5rem;
-    }
-
-    .countdown-label {
-        font-size: 0.65rem;
-    }
-
-    .countdown-separator {
-        font-size: 1.5rem;
-    }
-
-    .hero-side-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .timeline-container {
-        padding-left: 2rem;
-    }
-
-    .timeline-dot {
-        left: -1.75rem;
-    }
-
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr;
-        grid-auto-rows: 200px;
-    }
-
-    .theme-overlay {
-        height: 60%;
-    }
-}
-
 @media (max-width: 1024px) {
     .hero-content-wrapper {
         flex-direction: column;
@@ -302,66 +208,400 @@
         position: relative;
         right: auto;
         bottom: auto;
-        margin-top: 3rem;
+        margin-top: 2rem;
         transform: none;
     }
 }
 
-@media (max-width: 640px) {
-    .nav-links {
-        display: none;
-    }
+@media (max-width: 768px) {
 
-    .register-btn-nav {
-        padding: 0.5rem 1rem;
-        font-size: 0.8rem;
-    }
-
-    .hero-title {
+    /* Section titles */
+    .section-title {
         font-size: 2rem;
+        letter-spacing: 2px;
+        margin-bottom: 2rem;
     }
 
-    .countdown-container {
-        flex-wrap: wrap;
+    /* Timeline */
+    .timeline-container {
+        padding-left: 2rem;
     }
 
-    .hero-content-wrapper {
+    .timeline-dot {
+        left: -1.75rem;
+    }
+
+    .timeline-content {
         padding: 1rem;
     }
 
-    .hero-left-content {
-        align-items: center;
-        padding-left: 0;
+    .timeline-title {
+        font-size: 1.2rem;
     }
 
-    /* Navbar Logos Responsive */
-    .navbar-logos-section .container {
-        padding-left: 1rem;
-        padding-right: 1rem;
+    .timeline-description {
+        font-size: 0.9rem;
     }
 
-    .logos-row {
-        flex-direction: column;
+    /* Forms */
+    .form-grid {
+        grid-template-columns: 1fr;
         gap: 1rem;
     }
 
-    .college-logos-group,
-    .partner-logos-group {
-        flex-wrap: wrap;
-        justify-content: center;
+    .contact-form {
+        padding: 2rem 1.5rem;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
         gap: 0.75rem;
+        grid-auto-rows: 180px;
     }
 
-    .navbar-logo {
-        max-height: 40px;
+    /* Themes */
+    .theme-card {
+        min-height: 250px;
     }
 
-    .partner-logos-group .navbar-logo {
-        max-height: 50px;
+    .theme-overlay {
+        height: 65%;
     }
 
-    .logo-label {
-        font-size: 0.65rem;
+    .theme-title {
+        font-size: 1.3rem;
+    }
+
+    /* Announcements */
+    .announcement-card {
+        padding: 1.5rem;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    /* Prizes */
+    .prize-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .prize-amount {
+        font-size: 2rem;
+    }
+
+    /* Testimonials */
+    .testimonial-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .testimonial-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+
+    /* Section titles */
+    .section-title {
+        font-size: 1.75rem;
+        letter-spacing: 1.5px;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 220px;
+    }
+
+    /* Themes */
+    .theme-card {
+        min-height: 220px;
+    }
+
+    /* Timeline */
+    .timeline-container {
+        padding-left: 1.5rem;
+    }
+
+    .timeline-dot {
+        left: -1.5rem;
+        width: 12px;
+        height: 12px;
+    }
+
+    /* Announcements */
+    .announcement-card {
+        padding: 1.25rem;
+    }
+
+    /* Prizes */
+    .prize-card {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .trophy-icon {
+        font-size: 2.5rem;
+    }
+
+    .prize-amount {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Section padding */
+    .section-padding {
+        padding: 3rem 0;
+    }
+
+    /* Section titles */
+    .section-title {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Container */
+    .container {
+        padding: 0 0.75rem;
+    }
+
+    /* Forms */
+    .contact-form {
+        padding: 1.5rem 1rem;
+    }
+
+    .form-group label {
+        font-size: 0.8rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.75rem 0.875rem;
+        font-size: 0.95rem;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+        grid-auto-rows: 200px;
+        gap: 0.5rem;
+    }
+
+    /* Timeline */
+    .timeline-container {
+        padding-left: 1.25rem;
+    }
+
+    .timeline-content {
+        padding: 0.875rem;
+    }
+
+    .timeline-title {
+        font-size: 1.1rem;
+    }
+
+    .timeline-description {
+        font-size: 0.85rem;
+    }
+
+    /* Themes */
+    .theme-card {
+        min-height: 200px;
+    }
+
+    .theme-title {
+        font-size: 1.1rem;
+    }
+
+    .theme-description {
+        font-size: 0.85rem;
+    }
+
+    /* Announcements */
+    .announcement-card {
+        padding: 1rem;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-text {
+        font-size: 0.85rem;
+    }
+
+    /* Prizes */
+    .prize-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .trophy-icon {
+        font-size: 2rem;
+    }
+
+    .prize-title {
+        font-size: 1.1rem;
+    }
+
+    .prize-amount {
+        font-size: 1.5rem;
+    }
+
+    /* Testimonials */
+    .testimonial-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .testimonial-title {
+        font-size: 1.3rem;
+    }
+
+    .testimonial-story {
+        font-size: 0.9rem;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 1.5rem 0 1rem;
+    }
+
+    .footer-title {
+        font-size: 1.2rem;
+    }
+
+    .footer-heading {
+        font-size: 0.9rem;
+    }
+
+    .footer-text,
+    .footer-links a,
+    .footer-contact {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 375px) {
+
+    /* Section titles */
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+        grid-auto-rows: 180px;
+    }
+
+    /* Timeline */
+    .timeline-title {
+        font-size: 1rem;
+    }
+
+    /* Themes */
+    .theme-card {
+        min-height: 180px;
+    }
+
+    .theme-title {
+        font-size: 1rem;
+    }
+
+    /* Announcements */
+    .card-title {
+        font-size: 1rem;
+    }
+
+    /* Prizes */
+    .prize-amount {
+        font-size: 1.3rem;
+    }
+
+    /* Testimonials */
+    .testimonial-title {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 320px) {
+
+    /* Section padding */
+    .section-padding {
+        padding: 2.5rem 0;
+    }
+
+    /* Section titles */
+    .section-title {
+        font-size: 1.2rem;
+        margin-bottom: 1.25rem;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+        grid-auto-rows: 160px;
+    }
+
+    /* Timeline */
+    .timeline-title {
+        font-size: 0.95rem;
+    }
+
+    .timeline-description {
+        font-size: 0.8rem;
+    }
+
+    /* Themes */
+    .theme-card {
+        min-height: 160px;
+    }
+
+    .theme-title {
+        font-size: 0.95rem;
+    }
+
+    .theme-description {
+        font-size: 0.8rem;
+    }
+
+    /* Announcements */
+    .card-title {
+        font-size: 0.95rem;
+    }
+
+    .card-text {
+        font-size: 0.8rem;
+    }
+
+    /* Prizes */
+    .prize-title {
+        font-size: 1rem;
+    }
+
+    .prize-amount {
+        font-size: 1.2rem;
+    }
+
+    /* Testimonials */
+    .testimonial-title {
+        font-size: 1.1rem;
+    }
+
+    .testimonial-story {
+        font-size: 0.85rem;
+    }
+
+    /* Footer */
+    .footer-title {
+        font-size: 1.1rem;
+    }
+
+    .footer-text,
+    .footer-links a,
+    .footer-contact {
+        font-size: 0.8rem;
     }
 }
 

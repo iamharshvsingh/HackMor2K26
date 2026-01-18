@@ -169,18 +169,6 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
-
-    .college-logos-nav,
-    .partner-logos-nav {
-        display: none;
-    }
-
-    .nav-center-wrapper {
-        width: 100%;
-    }
-}
-
 @media (max-width: 1024px) {
     .nav-center-wrapper {
         margin-left: 0;
@@ -189,24 +177,132 @@
 
 @media (max-width: 768px) {
     .nav-wrapper {
-        padding: 0.5rem 1rem;
+        padding: 0.75rem 1rem;
         justify-content: space-between;
         height: auto;
+        min-height: 60px;
     }
 
+    /* Keep logos visible but smaller */
     .college-logos-nav {
         position: static;
         transform: none;
-        order: 1;
+        gap: 0.35rem;
+        padding-left: 0;
+    }
+
+    .nav-college-logo {
+        max-height: 35px;
     }
 
     .partner-logos-nav {
         position: static;
-        order: 2;
-        padding: 0;
+        gap: 0.35rem;
+        padding-right: 0;
+    }
+
+    .nav-partner-logo {
+        max-height: 40px;
+    }
+
+    .nav-partner-label {
+        font-size: 0.55rem;
+    }
+
+    /* Hide center nav links on mobile */
+    .nav-center-wrapper {
+        display: none;
     }
 
     .mobile-menu-wrapper {
-        order: 3;
+        position: static;
+        transform: none;
+    }
+
+    .mobile-menu-btn {
+        padding: 0.5rem;
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobile-menu {
+        margin-top: 0.75rem;
+    }
+
+    .mobile-menu .nav-link {
+        padding: 0.75rem 1rem;
+        display: block;
+        min-height: 44px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-wrapper {
+        padding: 0.5rem 0.75rem;
+        min-height: 55px;
+    }
+
+    .college-logos-nav {
+        gap: 0.25rem;
+    }
+
+    .nav-college-logo {
+        max-height: 28px;
+    }
+
+    .partner-logos-nav {
+        gap: 0.25rem;
+    }
+
+    .nav-partner-logo {
+        max-height: 32px;
+    }
+
+    .nav-partner-label {
+        font-size: 0.5rem;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 375px) {
+    .nav-wrapper {
+        padding: 0.5rem;
+    }
+
+    .college-logos-nav {
+        gap: 0.2rem;
+    }
+
+    .nav-college-logo {
+        max-height: 24px;
+    }
+
+    .partner-logos-nav {
+        gap: 0.2rem;
+    }
+
+    .nav-partner-logo {
+        max-height: 28px;
+    }
+
+    .nav-partner-label {
+        font-size: 0.45rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .nav-college-logo {
+        max-height: 22px;
+    }
+
+    .nav-partner-logo {
+        max-height: 24px;
+    }
+
+    .nav-partner-label {
+        display: none;
     }
 }
