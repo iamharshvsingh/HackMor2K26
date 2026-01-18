@@ -1,0 +1,289 @@
+/* ============================================
+   THEMES SECTION
+   ============================================ */
+
+.theme-card {
+    position: relative;
+    height: 320px;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition-medium);
+    opacity: 0;
+    transform: scale(0.95);
+    animation: theme-card-in 0.6s ease forwards;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+.theme-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.theme-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.theme-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.theme-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.theme-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.theme-card:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+@keyframes theme-card-in {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.theme-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    background-size: cover;
+    background-position: center;
+    transition: var(--transition-slow);
+    opacity: 0.6;
+}
+
+.theme-card[data-theme="cybersecurity"] .theme-image {
+    background-image:
+        linear-gradient(135deg, rgba(10, 10, 20, 0.7) 0%, rgba(10, 10, 20, 0.3) 60%, transparent 100%),
+        url("../../assets/images/themes/cybersecurity.jpeg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}
+
+.theme-card[data-theme="environment"] .theme-image {
+    background-image:
+        linear-gradient(135deg, rgba(3, 40, 20, 0.9) 0%, rgba(3, 40, 20, 0.4) 60%, transparent 100%),
+        url("../../assets/images/themes/environmentalsustainability.jpeg");
+}
+
+.theme-card[data-theme="healthcare"] .theme-image {
+    background-image:
+        linear-gradient(135deg, rgba(20, 10, 40, 0.9) 0%, rgba(20, 10, 40, 0.4) 60%, transparent 100%),
+        url("../../assets/images/themes/healthcare.jpeg");
+}
+
+.theme-card[data-theme="fintech"] .theme-image {
+    background-image:
+        linear-gradient(135deg, rgba(5, 30, 50, 0.9) 0%, rgba(5, 30, 50, 0.4) 60%, transparent 100%),
+        url("../../assets/images/themes/fintech.jpeg");
+}
+
+.theme-card[data-theme="smartcities"] .theme-image {
+    background-image:
+        linear-gradient(135deg, rgba(40, 20, 5, 0.9) 0%, rgba(40, 20, 5, 0.4) 60%, transparent 100%),
+        url("../../assets/images/themes/smartcities.jpeg");
+}
+
+.theme-card[data-theme="open"] .theme-image {
+    background-image:
+        linear-gradient(135deg, rgba(0, 40, 25, 0.9) 0%, rgba(0, 40, 25, 0.4) 60%, transparent 100%),
+        url("../../assets/images/themes/openinnovation.jpeg");
+}
+
+.theme-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.5) 50%, transparent 100%);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.theme-card:hover .theme-image {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.theme-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--glow-green);
+    border-color: var(--green-neon);
+}
+
+.theme-tag {
+    display: inline-block;
+    background: rgba(0, 255, 136, 0.2);
+    color: var(--green-neon);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    border: 1px solid rgba(0, 255, 136, 0.4);
+    align-self: flex-start;
+}
+
+.theme-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: var(--green-neon);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.theme-description {
+    color: #ffffff;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* ============================================
+   PRIZES SECTION
+   ============================================ */
+
+.prizes-section {
+    background: var(--gradient-cyber);
+    position: relative;
+}
+
+.prize-card {
+    background: rgba(0, 255, 136, 0.03);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(0, 255, 136, 0.2);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: var(--transition-medium);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: prize-card-in 0.6s ease forwards;
+}
+
+.prize-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.prize-card:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.prize-card:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+@keyframes prize-card-in {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.prize-first {
+    border-color: rgba(255, 215, 0, 0.4);
+}
+
+.prize-first:hover {
+    border-color: #ffd700;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+}
+
+.prize-second {
+    border-color: rgba(192, 192, 192, 0.4);
+}
+
+.prize-second:hover {
+    border-color: #c0c0c0;
+    box-shadow: 0 0 30px rgba(192, 192, 192, 0.5);
+}
+
+.prize-third {
+    border-color: rgba(205, 127, 50, 0.4);
+}
+
+.prize-third:hover {
+    border-color: #cd7f32;
+    box-shadow: 0 0 30px rgba(205, 127, 50, 0.5);
+}
+
+.prize-card:hover {
+    transform: translateY(-10px);
+}
+
+.trophy-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    animation: trophy-float 3s ease-in-out infinite;
+}
+
+@keyframes trophy-float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(5deg);
+    }
+}
+
+.prize-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    color: var(--green-neon);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.prize-amount {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+}
+
+.prize-benefits {
+    list-style: none;
+    text-align: left;
+}
+
+.prize-benefits li {
+    color: var(--text-secondary-dark);
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.prize-benefits li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--green-neon);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* ============================================

@@ -1,0 +1,40 @@
+/* ============================================
+   CSS VARIABLES (DARK MODE ONLY)
+   ============================================ */
+
+:root {
+    /* Dark Mode Colors Only */
+    --bg-primary-dark: #0a0a0f;
+    --bg-secondary-dark: #0f0f15;
+    --bg-tertiary: #151520;
+    --text-primary-dark: #e0e0e0;
+    --text-secondary-dark: #a0a0b0;
+    --text-muted: #707080;
+
+    /* Green Palette - 50 Shades of Cyber Green */
+    --green-neon: #00ff88;
+    --green-emerald: #10b981;
+    --green-mint: #6ee7b7;
+    --green-cyber: #00d9ff;
+    --green-forest: #065f46;
+    --green-dark: #022c22;
+    --green-cyber-dark: #006666;
+    --green-glow: rgba(0, 255, 136, 0.3);
+    --green-glow-strong: rgba(0, 255, 136, 0.6);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--green-neon) 0%, var(--green-emerald) 50%, var(--green-cyber) 100%);
+    --gradient-dark: linear-gradient(135deg, var(--green-forest) 0%, var(--green-dark) 100%);
+    --gradient-cyber: linear-gradient(180deg, rgba(0, 255, 136, 0.1) 0%, transparent 100%);
+
+    /* Shadows & Glows */
+    --glow-green: 0 0 20px rgba(0, 255, 136, 0.5), 0 0 40px rgba(0, 255, 136, 0.3);
+    --glow-strong: 0 0 30px rgba(0, 255, 136, 0.8), 0 0 60px rgba(0, 255, 136, 0.4);
+    --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    --shadow-cyber: 0 0 15px rgba(0, 255, 136, 0.3);
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}

@@ -1,0 +1,121 @@
+   GALLERY SECTION
+   /*============================================ */
+
+   .gallery-section {
+       position: relative;
+       background: rgba(0, 0, 0, 0.2);
+   }
+
+   .gallery-grid {
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+       gap: 1rem;
+       grid-auto-rows: 220px;
+       grid-auto-flow: dense;
+   }
+
+   .gallery-item {
+       position: relative;
+       border-radius: 12px;
+       overflow: hidden;
+       cursor: pointer;
+       transition: var(--transition-medium);
+       opacity: 0;
+       transform: scale(0.95);
+       animation: gallery-item-in 0.6s ease forwards;
+       border: 1px solid rgba(0, 255, 136, 0.2);
+   }
+
+   .gallery-item:nth-child(1) {
+       animation-delay: 0.1s;
+   }
+
+   .gallery-item:nth-child(2) {
+       animation-delay: 0.2s;
+   }
+
+   .gallery-item:nth-child(3) {
+       animation-delay: 0.3s;
+   }
+
+   .gallery-item:nth-child(4) {
+       animation-delay: 0.4s;
+   }
+
+   .gallery-item:nth-child(5) {
+       animation-delay: 0.5s;
+   }
+
+   .gallery-item:nth-child(6) {
+       animation-delay: 0.6s;
+   }
+
+   .gallery-item:nth-child(7) {
+       animation-delay: 0.7s;
+   }
+
+   .gallery-item:nth-child(8) {
+       animation-delay: 0.8s;
+   }
+
+   .gallery-item:nth-child(9) {
+       animation-delay: 0.9s;
+   }
+
+   .gallery-item:nth-child(10) {
+       animation-delay: 1s;
+   }
+
+   @keyframes gallery-item-in {
+       to {
+           opacity: 1;
+           transform: scale(1);
+       }
+   }
+
+   .gallery-item img {
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       transition: var(--transition-slow);
+   }
+
+   .gallery-overlay {
+       position: absolute;
+       top: 0;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       background: rgba(0, 0, 0, 0.8);
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       opacity: 0;
+       transition: var(--transition-medium);
+       backdrop-filter: blur(10px);
+   }
+
+   .gallery-item:hover .gallery-overlay {
+       opacity: 1;
+   }
+
+   .gallery-item:hover img {
+       transform: scale(1.1);
+   }
+
+   .gallery-item:hover {
+       transform: translateY(-5px);
+       box-shadow: var(--glow-green);
+       border-color: var(--green-neon);
+   }
+
+   .gallery-overlay span {
+       color: var(--green-neon);
+       font-family: 'Orbitron', sans-serif;
+       font-size: 1.2rem;
+       font-weight: 700;
+       text-transform: uppercase;
+       letter-spacing: 2px;
+   }
+
+   /* ============================================

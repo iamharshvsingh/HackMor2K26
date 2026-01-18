@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HACKMoR 2026</title>
-    <link rel="icon" type="image/x-icon" href="fav.ico">
+    <link rel="icon" type="image/x-icon" href="assets/icons/fav.ico">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -36,7 +36,7 @@
 
     <!-- Green Smoke Video Background -->
     <video autoplay loop muted playsinline class="background-video" id="greensmoke-bg">
-        <source src="greensmoke.mp4" type="video/mp4">
+        <source src="assets/videos/greensmoke.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <div class="smoke-layer"></div>
@@ -47,9 +47,9 @@
         <nav class="container mx-auto px-4 py-2 nav-wrapper">
             <!-- College Logos - Absolute Left Corner -->
             <div class="college-logos-nav">
-                <img src="clglogo1.jpg" alt="College 1" class="nav-college-logo">
-                <img src="clglogo2.jpg" alt="College 2" class="nav-college-logo">
-                <img src="clglogo3.jpg" alt="College 3" class="nav-college-logo">
+                <img src="assets/images/logos/clglogo1.jpg" alt="College 1" class="nav-college-logo">
+                <img src="assets/images/logos/clglogo2.jpg" alt="College 2" class="nav-college-logo">
+                <img src="assets/images/logos/clglogo3.jpg" alt="College 3" class="nav-college-logo">
             </div>
 
             <!-- Navigation Links - Center -->
@@ -69,11 +69,11 @@
             <div class="partner-logos-nav">
                 <div class="nav-partner-item">
                     <span class="nav-partner-label">Sponsor</span>
-                    <img src="sponsorpartner.png" alt="Sponsor" class="nav-partner-logo">
+                    <img src="assets/images/logos/sponsorpartner.png" alt="Sponsor" class="nav-partner-logo">
                 </div>
                 <div class="nav-partner-item">
                     <span class="nav-partner-label">Channel Partner</span>
-                    <img src="channelpartner.png" alt="Channel Partner" class="nav-partner-logo">
+                    <img src="assets/images/logos/channelpartner.png" alt="Channel Partner" class="nav-partner-logo">
                 </div>
             </div>
 
@@ -112,8 +112,24 @@
 
         <div class="container mx-auto px-4 py-20 relative z-10">
             <div class="hero-content-wrapper">
-                <!-- Left Content: Hybrid/Offline Mode Card -->
+                <!-- Left Content: Prize Pool + Hybrid/Offline Mode Card -->
                 <div class="hero-side-content">
+                    <!-- Prize Pool Card -->
+                    <div class="prize-pool-card">
+                        <div class="prize-pool-header">
+                            <span class="prize-trophy"></span>
+                            <h3 class="prize-pool-title">Total Prize Pool</h3>
+                        </div>
+                        <div class="prize-pool-amount">₹45,000</div>
+                        <div class="prize-breakdown">
+                            <span class="prize-item">🥇 ₹20K</span>
+                            <span class="prize-separator">•</span>
+                            <span class="prize-item">🥈 ₹15K</span>
+                            <span class="prize-separator">•</span>
+                            <span class="prize-item">🥉 ₹10K</span>
+                        </div>
+                    </div>
+
                     <div class="hybrid-mode-card">
                         <div class="hybrid-mode-header">
                         </div>
@@ -142,7 +158,7 @@
 
                     <!-- HACKMoR Logo -->
                     <div class="hero-logo-container">
-                        <img src="hackmormlogo.png" alt="HACKMoR 2026" class="hero-logo-img">
+                        <img src="assets/images/logos/hackmormlogo.png" alt="HACKMoR 2026" class="hero-logo-img">
                         <div class="organizer-wrapper"
                             style="display:flex; flex-direction:column; align-items:center; gap:0.5rem; margin-top:0.5rem;">
                             <span class="organized-by-text">Organized by</span>
@@ -155,17 +171,6 @@
                     <h1 class="hero-title" data-text="HACKMoR 2026">
                         HACKMoR 2026
                     </h1>
-
-                    <p class="hero-description">
-                        The Institution’s Innovation Council (IIC), Manav Rachna University presents HackMor 2026, a
-                        National-Level Hackathon
-                        that brings together student innovators from across India to build technology-driven, real-world
-                        solutions.
-                        Aligned with Manav Rachna University’s vision of promoting STEM education, startup culture, and
-                        strong industry–academia collaboration,
-                        HackMor 2026 encourages participants to develop scalable, socially relevant, and industry-ready
-                        innovations under expert mentorship and professional jury evaluation.
-                    </p>
 
                     <!-- Live Countdown Timer -->
                     <div class="countdown-container">
@@ -190,32 +195,47 @@
                         </div>
                     </div>
 
+
+                    <p class="hero-description">
+                        The Institution’s Innovation Council (IIC), Manav Rachna University presents HackMor 2026, a
+                        National-Level Hackathon
+                        that brings together student innovators from across India to build technology-driven, real-world
+                        solutions.
+                        Aligned with Manav Rachna University’s vision of promoting STEM education, startup culture, and
+                        strong industry–academia collaboration,
+                        HackMor 2026 encourages participants to develop scalable, socially relevant, and industry-ready
+                        innovations under expert mentorship and professional jury evaluation.
+                    </p>
+
                     <!-- Hackathon Dates Heading -->
                     <h2 class="hackathon-dates-heading"
-                        style="font-size:2rem; font-weight:600; margin:0; letter-spacing:2px; color:#9BE7B4; text-shadow:0 0 3px rgba(155,231,180,0.35);">
+                        style="font-family: 'Orbitron', sans-serif; font-size: 2.2rem; font-weight: 900; margin: 0; letter-spacing: 4px; color: #00ff88; text-shadow: 0 0 10px rgba(0, 255, 136, 0.6), 0 0 20px rgba(0, 255, 136, 0.4), 0 0 30px rgba(0, 255, 136, 0.2);">
                         19th–20th FEB 2026
                     </h2>
 
-                    <!-- Team Size Card -->
-                    <div class="team-size-card">
-                        <span class="team-size-label">Team Size:</span>
-                        <span class="team-size-value">1-4</span>
-                    </div>
-
-                    <!-- Registration Deadline Card -->
-                    <div class="registration-deadline-card">
-                        <div class="deadline-icon">
-                            <div class="hourglass">
-                                <div class="hourglass-top"></div>
-                                <div class="hourglass-middle"></div>
-                                <div class="hourglass-bottom"></div>
-                                <div class="sand-top"></div>
-                                <div class="sand-bottom"></div>
-                            </div>
+                    <!-- Team Size & Registration Deadline Row -->
+                    <div class="hero-info-row">
+                        <!-- Team Size Card -->
+                        <div class="team-size-card">
+                            <span class="team-size-label">Team Size:</span>
+                            <span class="team-size-value">1-4</span>
                         </div>
-                        <div class="deadline-content">
-                            <span class="deadline-label">Registrations Close</span>
-                            <span class="deadline-date">30th January 2026</span>
+
+                        <!-- Registration Deadline Card -->
+                        <div class="registration-deadline-card">
+                            <div class="deadline-icon">
+                                <div class="hourglass">
+                                    <div class="hourglass-top"></div>
+                                    <div class="hourglass-middle"></div>
+                                    <div class="hourglass-bottom"></div>
+                                    <div class="sand-top"></div>
+                                    <div class="sand-bottom"></div>
+                                </div>
+                            </div>
+                            <div class="deadline-content">
+                                <span class="deadline-label">Registrations Close</span>
+                                <span class="deadline-date">30th January 2026</span>
+                            </div>
                         </div>
                     </div>
 
@@ -223,12 +243,12 @@
                     <div class="hero-buttons">
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSeVzUxv8z1M4lzifczjyUED_yEUz7xufaasFKeHadrlmHp7kA/viewform"
                             target="_blank" rel="noopener noreferrer" class="btn-primary">Register Now</a>
-                        <button class="btn-secondary">Learn More</button>
                     </div>
                 </div>
 
                 <!-- Right Content: Registration Link -->
-                <div class="hero-right-content">
+                <div class="hero-right-content" id="right-content-panel"
+                    style="align-self: flex-start; margin-top: 12rem; transform: translateY(-160px);">
                     <div class="hacker-pass-card">
                         <div class="hacker-pass-header">
                             <span class="hacker-pass-badge"></span>
@@ -238,7 +258,7 @@
                         <!-- QR Code -->
                         <div class="hacker-pass-qr">
                             <div class="hacker-pass-qr-wrapper">
-                                <img src="qrcode.png" alt="QR Code for HACKMoR 2026 Registration"
+                                <img src="assets/icons/qrcode.png" alt="QR Code for HACKMoR 2026 Registration"
                                     class="hacker-pass-qr-img">
                                 <div class="qr-grid-overlay"></div>
                             </div>
@@ -335,7 +355,7 @@
     <!-- Timeline Section -->
     <section id="timeline" class="section-padding timeline-section">
         <div class="timeline-bg-layer">
-            <img src="timelinebg.png" alt="Timeline Background" class="timeline-bg-image">
+            <img src="assets/images/backgrounds/timelinebg.png" alt="Timeline Background" class="timeline-bg-image">
         </div>
         <div class="container mx-auto px-4 relative z-10">
             <h2 class="section-title text-center mb-16 glitch-text" data-text="Event Timeline">Event Timeline</h2>
@@ -356,8 +376,9 @@
                 <!-- Timeline Item 2 -->
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3 class="timeline-title glitch-text" data-text="Team Formation">Team Formation</h3>
-                        <p class="timeline-description">Team Size: 1-4 </p>
+                        <h3 class="timeline-title glitch-text" data-text="Registration Close">Registration Close</h3>
+                        <p class="timeline-description"><span style="color:var(--green-neon);font-weight:600;">30th Jan,
+                                2026</span></p>
                     </div>
                     <div class="timeline-dot"></div>
                 </div>
@@ -365,9 +386,10 @@
                 <!-- Timeline Item 3 -->
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3 class="timeline-title glitch-text" data-text="Hackathon Begins">Hackathon Begins</h3>
-                        <p class="timeline-description">36 Hours Non-Stop Coding<br><span
-                                style="color:var(--green-neon);font-weight:600;">19th Feb, 2026</span></p>
+                        <h3 class="timeline-title glitch-text" data-text="1st Review of Presentation">1st Review of
+                            Presentation</h3>
+                        <p class="timeline-description"><span style="color:var(--green-neon);font-weight:600;">19th Feb,
+                                2026</span></p>
                     </div>
                     <div class="timeline-dot"></div>
                 </div>
@@ -375,9 +397,9 @@
                 <!-- Timeline Item 4 -->
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3 class="timeline-title glitch-text" data-text="Final Presentations">Final Presentations</h3>
-                        <p class="timeline-description">Live judging & awards<br><span
-                                style="color:var(--green-neon);font-weight:600;">20th Feb, 2026</span></p>
+                        <h3 class="timeline-title glitch-text" data-text="Result Declaration">Result Declaration</h3>
+                        <p class="timeline-description"><span style="color:var(--green-neon);font-weight:600;">20th Feb,
+                                2026</span></p>
                     </div>
                     <div class="timeline-dot"></div>
                 </div>
@@ -487,81 +509,235 @@
     <!-- Gallery Section -->
     <section id="gallery" class="section-padding gallery-section">
         <div class="container mx-auto px-4">
-            <h2 class="section-title text-center mb-16 glitch-text" data-text="Glimpse of Hackathons">Glimpses of
+            <h2 class="section-title text-center mb-16 glitch-text normal-case" data-text="GLIMPSE OF HACKATHONS">
+                GLIMPSES OF
                 HACKMoR 2024</h2>
             <div class="gallery-grid" id="gallery-grid">
                 <div class="gallery-item">
-                    <img src="glimpse1.jpg" alt="Hackathon Glimpse 1" class="gallery-image">
+                    <img src="assets/images/gallery/glimpse1.jpg" alt="Hackathon Glimpse 1" class="gallery-image">
                     <div class="gallery-overlay">
                         <span>HACKMoR Memories</span>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="glimpse2.jpg" alt="Hackathon Glimpse 2" class="gallery-image">
+                    <img src="assets/images/gallery/glimpse2.jpg" alt="Hackathon Glimpse 2" class="gallery-image">
                     <div class="gallery-overlay">
                         <span>HACKMoR Memories</span>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="glimpse3.jpg" alt="Hackathon Glimpse 3" class="gallery-image">
+                    <img src="assets/images/gallery/glimpse3.jpg" alt="Hackathon Glimpse 3" class="gallery-image">
                     <div class="gallery-overlay">
                         <span>HACKMoR Memories</span>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="glimpse4.jpg" alt="Hackathon Glimpse 4" class="gallery-image">
+                    <img src="assets/images/gallery/glimpse4.jpg" alt="Hackathon Glimpse 4" class="gallery-image">
                     <div class="gallery-overlay">
                         <span>HACKMoR Memories</span>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="glimpse5.jpg" alt="Hackathon Glimpse 5" class="gallery-image">
+                    <img src="assets/images/gallery/glimpse5.jpg" alt="Hackathon Glimpse 5" class="gallery-image">
                     <div class="gallery-overlay">
                         <span>HACKMoR Memories</span>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="glimpse6.jpg" alt="Hackathon Glimpse 6" class="gallery-image">
+                    <img src="assets/images/gallery/glimpse6.jpg" alt="Hackathon Glimpse 6" class="gallery-image">
                     <div class="gallery-overlay">
                         <span>HACKMoR Memories</span>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="glimpse7.jpg" alt="Hackathon Glimpse 7" class="gallery-image">
+                    <img src="assets/images/gallery/glimpse7.jpg" alt="Hackathon Glimpse 7" class="gallery-image">
                     <div class="gallery-overlay">
                         <span>HACKMoR Memories</span>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="glimpse8.jpg" alt="Hackathon Glimpse 8" class="gallery-image">
+                    <img src="assets/images/gallery/glimpse8.jpg" alt="Hackathon Glimpse 8" class="gallery-image">
                     <div class="gallery-overlay">
                         <span>HACKMoR Memories</span>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="glimpse9.jpg" alt="Hackathon Glimpse 9" class="gallery-image">
+                    <img src="assets/images/gallery/glimpse9.jpg" alt="Hackathon Glimpse 9" class="gallery-image">
                     <div class="gallery-overlay">
                         <span>HACKMoR Memories</span>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="glimpse10.jpg" alt="Hackathon Glimpse 10" class="gallery-image">
+                    <img src="assets/images/gallery/glimpse10.jpg" alt="Hackathon Glimpse 10" class="gallery-image">
                     <div class="gallery-overlay">
                         <span>HACKMoR Memories</span>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="glimpse11.jpg" alt="Hackathon Glimpse 11" class="gallery-image">
+                    <img src="assets/images/gallery/glimpse11.jpg" alt="Hackathon Glimpse 11" class="gallery-image">
                     <div class="gallery-overlay">
                         <span>HACKMoR Memories</span>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="glimpse12.jpg" alt="Hackathon Glimpse 12" class="gallery-image">
+                    <img src="assets/images/gallery/glimpse12.jpg" alt="Hackathon Glimpse 12" class="gallery-image">
                     <div class="gallery-overlay">
                         <span>HACKMoR Memories</span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-padding testimonials-section">
+        <div class="container mx-auto px-4">
+            <div class="testimonials-header">
+                <h2 class="section-title text-center glitch-text normal-case"
+                    data-text="WHAT PARTICIPANTS SAY ABOUT HACKMoR">WHAT
+                    PARTICIPANTS SAY ABOUT HACKMoR</h2>
+                <p class="testimonials-subtitle">Real teams. Real pressure. Real memories.</p>
+            </div>
+
+            <!-- Testimonial Card 1: Team Jambimony -->
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <span class="testimonial-badge normal-case">HACKMoR 2024</span>
+                    <h3 class="testimonial-title glitch-text" data-text="Team Jambimony">Team Jambimony</h3>
+                    <p class="testimonial-achievement">🏆 Top 10 Finalists | Amity University Gurgaon</p>
+                </div>
+
+                <div class="testimonial-content">
+                    <div class="testimonial-story">
+                        <p>
+                            Team Jambimony from Amity University Gurgaon had an incredible run at the <strong
+                                class="testimonial-highlight">HackMoR MRU National-Level Hackathon 2024</strong> hos
+                            t ed
+                            by Manav Rachna University.
+                        </p>
+                        <p>
+                            <strong>Day 1:</strong> They broke into the <span class="testimonial-highlight">Top 7
+                                teams</span>, impressing judges with a project that blended India's cultural her
+                            i tage
+                            with modern tech. The idea stood out, and the encouragement from judges pushed the team to
+
+                            aim higher.
+                        </p>
+                        <p>
+                            <strong>Day 2:</strong> The team made it to the <span class="testimonial-highlight">Top 10
+
+                                finalists</span>. While the journey ended there, the expert feedback they received
+                            became the real win — insights they're now using to level up their platform.
+                        </p>
+                        <p>
+                            The experience was intense, collaborative, and packed with learning. Huge credit to the
+                            team's chemistry and to their mentor <strong>Dr. Riya Sapra</strong> for the guidance
+                            throughout.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="testimonial-gallery">
+                    <h4 class="gallery-title">Hackathon Moments</h4>
+                    <div class="testimonial-images">
+                        <div class="testimonial-image-wrapper">
+                            <img src="assets/images/testimonials/testimonial1.1.jpeg"
+                                alt="Team Jambimony at HackMoR 2024" class="testimonial-image">
+                        </div>
+                        <div class="testimonial-image-wrapper">
+                            <img src="assets/images/testimonials/testimonial1.2.jpeg" alt=bs
+                                calt="TeamlJambimonyapresenting" ss="testimonial-image">
+                        </div>
+                        <div class="testimonial-image-wrapper">
+                            <img src="assets/images/testimonials/testimonial1.3.jpeg" alt="Team Jambimony coding"
+                                class="testimonial-image">
+                        </div>
+                        <div class="testimonial-image-wrapper">
+                            <img src="assets/images/testimonials/testimonial1.4.jpeg" alt=bl
+                                calt="TeamlJambimonyacollaboration" ss="testimonial-image">
+                        </div>
+                        <div class="testimonial-image-wrapper">
+                            <img src="assets/images/testimonials/testimonial1.5.jpeg" alt=bhg
+                                alt="TeamcJambimonylwithajudges" ss="testimonial-image">
+                        </div>
+                        <div class="testimonial-image-wrapper">
+                            <img src="assets/images/testimonials/testimonial1.6.jpeg" alt=be
+                                calt="TeamlJambimonyacelebration" ss="testimonial-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial Card 2: 2nd Place Winners -->
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <span class="testimonial-badge normal-case">HACKMoR 2024</span>
+                    <h3 class="testimonial-title glitch-text" data-text="Furfuri Nagariya Wale">Furfuri Nagariya Wal
+                        e
+                    </h3>
+                    <p class="testimonial-achievement">🥈 2nd Place | ₹20,000 Cash Prize</p>
+                </div>
+
+                <div class="testimonial-content">
+                    <div class="testimonial-story">
+                        <p>
+                            After a <strong class="testimonial-highlight">36-hour non-stop hackathon</strong> (16–17
+                            October), team "Furfuri Nagariya Wale" secured <span class="prize-highlight">2nd place at
+
+                                HackMoR 2024</span> with their project <strong>"Plant Solution"</strong>, winning a
+                            <span class="prize-highlight">₹20,000 cash prize</span>.
+                        </p>
+                        <p>
+                            Beyond the podium finish, the real value came from presenting their idea to industry jud
+                            ges
+                            and getting direct, honest feedback. That input reshaped their project and gave them cla
+                            rity
+                            on what to improve next.
+                        </p>
+                        <p>
+                            A big shoutout to the organizers, mentors, and everyone who made HackMoR such a hig
+                            h-energy
+                            and learning-driven experience.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="testimonial-gallery">
+                    <h4 class="gallery-title">Victory Moments</h4>
+                    <div class="testimonial-images">
+                        <div class="testimonial-image-wrapper">
+                            <img src="assets/images/testimonials/testimonial2.1.jpeg"
+                                alt="2nd Place winners at HackMoR 2024" class="testimonial-image">
+                        </div>
+                        <div class="testimonial-image-wrapper">
+                            <img src="assets/images/testimonials/testimonial2.2.jpeg" alt=ujo
+                                alt="PlantcSolutionlprojectademo" ss="testimonial-image">
+                        </div>
+                        <div class="testimonial-image-wrapper">
+                            <img src="assets/images/testimonials/testimonial2.3.jpeg" alt=sjg
+                                alt="Teamcpresentingltoajudges" ss="testimonial-image">
+                        </div>
+                        <div class="testimonial-image-wrapper">
+                            <img src="assets/images/testimonials/testimonial2.4.jpeg" alt="Award ceremony moment"
+                                class="testimonial-image">
+                        </div>
+                        <div class="testimonial-image-wrapper">
+                            <img src="assets/images/testimonials/testimonial2.5.jpeg" alt="Team with trophy"
+                                class="testimonial-image">
+                        </div>
+                        <div class="testimonial-image-wrapper">
+                            <img src="assets/images/testimonials/testimonial2.6.jpeg" alt=ha
+                                calt="Celebrationlwithaorganizers" ss="testimonial-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="testimonials-cta">
+                <p class="testimonials-cta-text normal-case">YOUR STORY COULD BE NEXT. JOIN US AT HACKMoR 2K26.</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeVzUxv8z1M4lzifczjyUED_yEUz7xufaasFKeHadrlmHp7kA/viewform"
+                    target="_blank" rel="noopener noreferrer" class="btn-primary">Register Now</a>
             </div>
         </div>
     </section>
@@ -653,7 +829,15 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="scripts/components/loading.js"></script>
+    <script src="scripts/components/countdown.js"></script>
+    <script src="scripts/components/textEffects.js"></script>
+    <script src="scripts/components/navigation.js"></script>
+    <script src="scripts/components/particles.js"></script>
+    <script src="scripts/components/gallery.js"></script>
+    <script src="scripts/components/form.js"></script>
+    <script src="scripts/utils/helpers.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 
 </html>

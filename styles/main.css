@@ -1,0 +1,23 @@
+/* ============================================
+   MAIN CSS - IMPORTS ALL COMPONENTS
+   ============================================ */
+
+/* Base Styles */
+@import 'variables.css';
+@import 'global.css';
+@import 'animations.css';
+
+/* Components */
+@import 'components/hero-logo.css';
+@import 'components/loading.css';
+@import 'components/navbar.css';
+@import 'components/hero.css';
+@import 'components/tracks.css';
+@import 'components/timeline.css';
+@import 'components/gallery.css';
+@import 'components/testimonials.css';
+@import 'components/contact.css';
+@import 'components/prize-card.css';
+
+/* Utilities */
+@import 'utilities.css';

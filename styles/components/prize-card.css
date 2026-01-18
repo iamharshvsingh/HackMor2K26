@@ -1,0 +1,166 @@
+/* ============================================
+   PRIZE POOL CARD - HOME PAGE
+   ============================================ */
+
+.prize-pool-card {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.12) 0%, rgba(255, 165, 0, 0.08) 100%);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    border-radius: 16px;
+    padding: 1.25rem 1rem;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+    animation: prize-pulse 2.5s ease-in-out infinite;
+    transition: all 0.3s ease;
+    margin: 0;
+    min-width: 260px;
+    max-width: 300px;
+}
+
+.prize-pool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.5);
+    border-color: rgba(255, 215, 0, 0.8);
+}
+
+@keyframes prize-pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+        border-color: rgba(255, 215, 0, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 50px rgba(255, 215, 0, 0.6);
+        border-color: rgba(255, 215, 0, 0.8);
+    }
+}
+
+.prize-pool-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.prize-trophy {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
+    animation: trophy-bounce 2s ease-in-out infinite;
+}
+
+@keyframes trophy-bounce {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-5px) scale(1.05);
+    }
+}
+
+.prize-pool-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.95rem;
+    color: #FFD700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+    margin: 0;
+}
+
+.prize-pool-amount {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #FFD700;
+    text-shadow:
+        0 0 20px rgba(255, 215, 0, 0.8),
+        0 0 40px rgba(255, 215, 0, 0.5),
+        2px 2px 0 rgba(255, 165, 0, 0.8);
+    line-height: 1;
+    letter-spacing: 2px;
+}
+
+.prize-breakdown {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.prize-item {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-secondary-dark);
+    background: rgba(255, 215, 0, 0.1);
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.prize-item:hover {
+    background: rgba(255, 215, 0, 0.2);
+    border-color: rgba(255, 215, 0, 0.5);
+    transform: scale(1.05);
+}
+
+.prize-separator {
+    color: rgba(255, 215, 0, 0.6);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .prize-pool-card {
+        padding: 1.25rem 1.5rem;
+    }
+
+    .prize-trophy {
+        font-size: 1.5rem;
+    }
+
+    .prize-pool-title {
+        font-size: 0.95rem;
+    }
+
+    .prize-pool-amount {
+        font-size: 2.5rem;
+    }
+
+    .prize-item {
+        font-size: 0.9rem;
+        padding: 0.35rem 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .prize-pool-card {
+        padding: 1rem 1.25rem;
+    }
+
+    .prize-pool-amount {
+        font-size: 2rem;
+    }
+
+    .prize-breakdown {
+        gap: 0.5rem;
+    }
+
+    .prize-item {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.6rem;
+    }
+}
