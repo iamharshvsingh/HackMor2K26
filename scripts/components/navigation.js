@@ -30,6 +30,17 @@ navLinks.forEach(link => {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
+
+        // Add visual click effect
+        this.style.transition = 'all 0.15s ease';
+        this.style.transform = 'scale(0.95)';
+        this.style.color = '#00ff88';
+
+        setTimeout(() => {
+            this.style.transform = 'scale(1)';
+            this.style.color = '';
+        }, 150);
+
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
             const headerOffset = 80;

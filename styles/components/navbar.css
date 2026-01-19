@@ -23,30 +23,32 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 70px;
-    padding: 2rem 0 1.5rem 0;
+    min-height: 95px;
+    padding: 2.75rem 0 2.25rem 0;
+    max-width: 100%;
+    width: 100%;
 }
 
 /* College Logos - Absolute Left Corner */
 .college-logos-nav {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    position: fixed;
+    left: 0.75rem;
+    top: 0;
     display: flex;
     gap: 0.50rem;
     align-items: center;
-    padding-left: 0rem;
-    z-index: 10;
+    padding: 1rem 0 1rem 0;
+    z-index: 100;
 }
 
 .nav-college-logo {
-    max-height: 45px;
+    max-height: 50px;
     width: auto;
     object-fit: contain;
     opacity: 0.85;
     filter: brightness(1.05) drop-shadow(0 0 4px rgba(0, 255, 136, 0.15));
     transition: var(--transition-medium);
+    border-radius: 10px;
 }
 
 .nav-college-logo:hover {
@@ -60,7 +62,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 8rem;
+    margin-left: 4rem;
 }
 
 .nav-links {
@@ -100,17 +102,46 @@
     width: 100%;
 }
 
+/* Nav Brand - HACKMoR 2024 */
+.nav-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    line-height: 1;
+}
+
+.nav-brand::after {
+    display: none;
+}
+
+.brand-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    font-weight: 900;
+    color: var(--green-neon);
+    text-shadow: 0 0 8px rgba(0, 255, 136, 0.5);
+    letter-spacing: 2px;
+}
+
+.brand-year {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--cyan-neon);
+    letter-spacing: 3px;
+}
+
 /* Partner Logos - Absolute Right Corner */
 .partner-logos-nav {
-    position: absolute;
-    right: 0;
+    position: fixed;
+    right: 0.75rem;
     top: 0;
-    bottom: 0;
     display: flex;
-    gap: 0.50rem;
+    gap: 1rem;
     align-items: center;
-    padding-right: 0rem;
-    z-index: 10;
+    padding: 0.5rem 0 0.5rem 0;
+    z-index: 100;
 }
 
 .nav-partner-item {
@@ -131,7 +162,7 @@
 }
 
 .nav-partner-logo {
-    max-height: 55px;
+    max-height: 65px;
     width: auto;
     object-fit: contain;
     filter: brightness(1.2) drop-shadow(0 0 8px rgba(0, 255, 136, 0.4));

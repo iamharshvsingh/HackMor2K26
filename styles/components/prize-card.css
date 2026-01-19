@@ -88,6 +88,95 @@
     letter-spacing: 2px;
 }
 
+.prize-pool-heading {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+    color: #FFD700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 900;
+    text-shadow:
+        0 0 15px rgba(255, 215, 0, 0.8),
+        0 0 30px rgba(255, 215, 0, 0.5);
+    margin: 0 0 0.5rem 0;
+    text-align: center;
+}
+
+/* Vertical Prize Breakdown - Each prize on its own row */
+.prize-breakdown-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.prize-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.prize-row:hover {
+    transform: scale(1.03);
+}
+
+/* 1st Place - Gold styling */
+.prize-first-place {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.25) 0%, rgba(255, 165, 0, 0.15) 100%);
+    border: 1px solid rgba(255, 215, 0, 0.6);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+/* 2nd Place - Silver styling */
+.prize-second-place {
+    background: linear-gradient(135deg, rgba(192, 192, 192, 0.2) 0%, rgba(169, 169, 169, 0.12) 100%);
+    border: 1px solid rgba(192, 192, 192, 0.5);
+    box-shadow: 0 0 12px rgba(192, 192, 192, 0.25);
+}
+
+/* 3rd Place - Bronze styling */
+.prize-third-place {
+    background: linear-gradient(135deg, rgba(205, 127, 50, 0.2) 0%, rgba(184, 115, 51, 0.12) 100%);
+    border: 1px solid rgba(205, 127, 50, 0.5);
+    box-shadow: 0 0 12px rgba(205, 127, 50, 0.25);
+}
+
+.prize-medal {
+    font-size: 1.6rem;
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.5));
+}
+
+.prize-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    flex: 1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.prize-value {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.4));
+}
+
+.prize-first-place .prize-value {
+    font-size: 1.5rem;
+}
+
+/* Old styles kept for backward compatibility */
 .prize-breakdown {
     display: flex;
     align-items: center;
@@ -108,12 +197,6 @@
     border: 1px solid rgba(255, 215, 0, 0.3);
     transition: all 0.3s ease;
     white-space: nowrap;
-}
-
-.prize-item:hover {
-    background: rgba(255, 215, 0, 0.2);
-    border-color: rgba(255, 215, 0, 0.5);
-    transform: scale(1.05);
 }
 
 .prize-separator {

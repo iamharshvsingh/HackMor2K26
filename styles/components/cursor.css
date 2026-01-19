@@ -1,0 +1,93 @@
+/* ============================================
+   CANVAS-BASED CYBERPUNK CURSOR - HIGH CONTRAST
+   Premium cursor system with guaranteed visibility
+   ============================================ */
+
+/* ===== HIDE DEFAULT CURSOR ===== */
+* {
+    cursor: none !important;
+}
+
+/* Allow cursor on form inputs for accessibility */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    cursor: text !important;
+}
+
+/* ===== CANVAS CONTAINER ===== */
+#cursor-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 99999;
+    /* Use difference blend for auto-contrast */
+    mix-blend-mode: difference;
+    opacity: 0.95;
+}
+
+/* Secondary canvas for additive glow effects */
+#cursor-canvas-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 99998;
+    /* Screen blend for glow that adds light */
+    mix-blend-mode: screen;
+    opacity: 0.85;
+}
+
+/* ===== MOBILE & TOUCH DEVICES - DISABLE ===== */
+@media (max-width: 768px) {
+
+    #cursor-canvas,
+    #cursor-canvas-glow {
+        display: none !important;
+    }
+
+    * {
+        cursor: auto !important;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+
+    #cursor-canvas,
+    #cursor-canvas-glow {
+        display: none !important;
+    }
+
+    * {
+        cursor: auto !important;
+    }
+}
+
+/* ===== REDUCED MOTION ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+
+    #cursor-canvas,
+    #cursor-canvas-glow {
+        display: none !important;
+    }
+
+    * {
+        cursor: auto !important;
+    }
+}
+
+/* ===== PERFORMANCE HINTS ===== */
+#cursor-canvas,
+#cursor-canvas-glow {
+    will-change: contents;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}

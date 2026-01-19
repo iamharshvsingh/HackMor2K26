@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Check if element is in testimonials section for faster glitch
         const isTestimonialsSection = element.closest('.testimonials-section') !== null;
-        const intervalTime = isTestimonialsSection ? 15 : 30;
-        const iterationSpeed = isTestimonialsSection ? 1 : 1 / 3;
+        const intervalTime = isTestimonialsSection ? 8 : 15;
+        const iterationSpeed = isTestimonialsSection ? 2 : 1;
 
         element.addEventListener('mouseenter', function () {
             let iterations = 0;
