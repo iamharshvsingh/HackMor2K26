@@ -724,7 +724,7 @@
     font-family: 'Rajdhani', sans-serif;
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.85);
-    text-align: center;
+    text-align: left;
     max-width: 600px;
     line-height: 1.6;
     margin-top: 0.5rem;
@@ -1982,13 +1982,24 @@
 }
 
 .hacker-pass-old {
-    font-size: 1.4rem;
+    font-size: 2rem;
     font-family: 'Orbitron', sans-serif;
     color: rgba(255, 255, 255, 0.4);
-    text-decoration: line-through;
-    text-decoration-color: #ff4444;
-    text-decoration-thickness: 3px;
     font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.hacker-pass-old::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -5%;
+    right: -5%;
+    height: 3px;
+    background: #ff4444;
+    transform: translateY(-50%) rotate(-15deg);
+    box-shadow: 0 0 8px rgba(255, 68, 68, 0.6);
 }
 
 .price-arrow {
