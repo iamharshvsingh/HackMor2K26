@@ -312,41 +312,11 @@
         font-size: 0.9rem;
     }
 
-    .univ-box {
-        font-size: 1rem;
-        padding: 0.4rem 1rem;
-        white-space: normal;
-        text-align: center;
-    }
-
     /* Description */
     .hero-description {
         font-size: 0.85rem;
         padding: 0 0.5rem;
         line-height: 1.5;
-    }
-
-    /* Countdown */
-    .countdown-container {
-        gap: 0.5rem;
-        margin: 1rem 0;
-    }
-
-    .countdown-item {
-        min-width: 65px;
-        padding: 0.8rem 0.6rem;
-    }
-
-    .countdown-value {
-        font-size: 1.8rem;
-    }
-
-    .countdown-label {
-        font-size: 0.65rem;
-    }
-
-    .countdown-separator {
-        font-size: 1.3rem;
     }
 
     /* Hackathon dates */
@@ -414,22 +384,8 @@
         max-width: 200px;
     }
 
-    .univ-box {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.9rem;
-    }
-
     .hackathon-dates-heading {
         font-size: 1.4rem !important;
-    }
-
-    .countdown-item {
-        min-width: 58px;
-        padding: 0.7rem 0.5rem;
-    }
-
-    .countdown-value {
-        font-size: 1.6rem;
     }
 
     .hero-side-content,
@@ -474,12 +430,6 @@
         font-size: 0.85rem;
     }
 
-    .univ-box {
-        font-size: 0.8rem;
-        padding: 0.35rem 0.7rem;
-        letter-spacing: 1px;
-    }
-
     .hero-description {
         font-size: 0.8rem;
         padding: 0 0.25rem;
@@ -488,37 +438,6 @@
     .hackathon-dates-heading {
         font-size: 1.2rem !important;
         letter-spacing: 1px !important;
-    }
-
-    .countdown-container {
-        gap: 0.3rem;
-        margin: 0.75rem 0;
-        flex-wrap: nowrap;
-        padding: 0 0.75rem;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .countdown-item {
-        min-width: 0;
-        flex: 1;
-        max-width: none;
-        padding: 0.4rem 0.2rem;
-        border-width: 1px;
-    }
-
-    .countdown-value {
-        font-size: 1.1rem;
-        margin-bottom: 0.15rem;
-    }
-
-    .countdown-label {
-        font-size: 0.5rem;
-        letter-spacing: 0;
-    }
-
-    .countdown-separator {
-        display: none;
     }
 
     .hero-info-row {
@@ -555,34 +474,8 @@
         max-width: 150px;
     }
 
-    .univ-box {
-        font-size: 0.75rem;
-        padding: 0.3rem 0.6rem;
-    }
-
     .hackathon-dates-heading {
         font-size: 1.1rem !important;
-    }
-
-    .countdown-container {
-        gap: 0.1rem;
-        padding: 0 0.25rem;
-    }
-
-    .countdown-item {
-        padding: 0.3rem 0.15rem;
-    }
-
-    .countdown-value {
-        font-size: 0.9rem;
-    }
-
-    .countdown-label {
-        font-size: 0.4rem;
-    }
-
-    .countdown-separator {
-        font-size: 0.7rem;
     }
 
     .hero-side-content,
@@ -605,38 +498,12 @@
         font-size: 0.75rem;
     }
 
-    .univ-box {
-        font-size: 0.7rem;
-        padding: 0.25rem 0.5rem;
-    }
-
     .hero-description {
         font-size: 0.75rem;
     }
 
     .hackathon-dates-heading {
         font-size: 1rem !important;
-    }
-
-    .countdown-container {
-        gap: 0.05rem;
-        padding: 0 0.15rem;
-    }
-
-    .countdown-item {
-        padding: 0.25rem 0.1rem;
-    }
-
-    .countdown-value {
-        font-size: 0.8rem;
-    }
-
-    .countdown-label {
-        font-size: 0.35rem;
-    }
-
-    .countdown-separator {
-        font-size: 0.6rem;
     }
 }
 
@@ -688,19 +555,26 @@
 .univ-box {
     color: var(--green-neon);
     font-family: 'Rajdhani', sans-serif;
-    font-size: 1.5rem;
+    font-size: clamp(0.7rem, 2.5vw, 1.5rem);
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    padding: 0.7rem 2rem;
+    letter-spacing: clamp(0.5px, 0.4vw, 2px);
+    padding: clamp(0.3rem, 1.5vw, 0.7rem) clamp(0.5rem, 3vw, 2rem);
     background: rgba(0, 255, 136, 0.1);
     border: 2px solid rgba(0, 255, 136, 0.5);
     border-radius: 8px;
     backdrop-filter: blur(5px);
     box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
     text-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
-    white-space: nowrap;
+    white-space: normal;
     transition: all 0.3s ease;
+    max-width: calc(100% - 32px);
+    width: auto;
+    display: inline-block;
+    box-sizing: border-box;
+    overflow: visible;
+    text-align: center;
+    line-height: 1.3;
 }
 
 .univ-box:hover {
@@ -711,11 +585,11 @@
 
 .organized-by-text {
     font-family: 'Rajdhani', sans-serif;
-    font-size: 1.2rem;
+    font-size: clamp(0.75rem, 2vw, 1.2rem);
     font-weight: 600;
     color: var(--text-secondary-dark);
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: clamp(0.5px, 0.3vw, 2px);
     margin: 0;
     padding: 0;
 }
@@ -967,9 +841,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: clamp(0.25rem, 2vw, 1rem);
     margin: 2rem 0;
     flex-wrap: nowrap;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 max(16px, 2vw);
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .countdown-item {
@@ -977,11 +856,14 @@
     backdrop-filter: blur(20px);
     border: 2px solid rgba(0, 255, 136, 0.3);
     border-radius: 12px;
-    padding: 1.5rem 1rem;
-    min-width: 90px;
+    padding: clamp(0.4rem, 2vw, 1.5rem) clamp(0.2rem, 1.5vw, 1rem);
+    min-width: clamp(45px, 12vw, 90px);
+    max-width: clamp(55px, 15vw, 110px);
+    flex: 1;
     text-align: center;
     box-shadow: var(--shadow-cyber);
     transition: var(--transition-medium);
+    box-sizing: border-box;
 }
 
 .countdown-item:hover {
@@ -992,13 +874,13 @@
 
 .countdown-value {
     font-family: 'Space Mono', monospace;
-    font-size: 2.5rem;
+    font-size: clamp(0.9rem, 4vw, 2.5rem);
     font-weight: 700;
     color: var(--green-neon);
     line-height: 1;
     margin-bottom: 0.5rem;
     text-shadow: 0 0 15px rgba(0, 255, 136, 0.6);
-    letter-spacing: 2px;
+    letter-spacing: clamp(0px, 0.3vw, 2px);
 }
 
 .countdown-ms {
@@ -1007,25 +889,31 @@
 
 .countdown-label {
     font-family: 'Rajdhani', sans-serif;
-    font-size: 0.75rem;
+    font-size: clamp(0.4rem, 1.5vw, 0.75rem);
     color: var(--text-secondary-dark);
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: clamp(0px, 0.3vw, 2px);
     font-weight: 600;
 }
 
 .countdown-separator {
     font-family: 'Space Mono', monospace;
-    font-size: 2rem;
+    font-size: clamp(0.8rem, 3vw, 2rem);
     color: var(--green-neon);
-    font-weight: 700;
-    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+    opacity: 0.7;
+    user-select: none;
+}
+
+/* Hide separators on very small screens */
+@media (max-width: 420px) {
+    .countdown-separator {
+        display: none;
+    }
 }
 
 /* ============================================
    HERO INFO ROW (Team Size + Deadline)
    ============================================ */
-
 .hero-info-row {
     display: flex;
     align-items: center;
