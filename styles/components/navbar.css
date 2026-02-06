@@ -23,8 +23,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100px;
-    padding: 2.5rem 0 2rem 0;
+    min-height: 80px;
+    padding: 1.5rem 0;
     max-width: 100%;
     width: 100%;
 }
@@ -45,7 +45,7 @@
     max-height: 50px;
     width: auto;
     object-fit: contain;
-    opacity: 0.85;
+    opacity: 1;
     filter: brightness(1.05) drop-shadow(0 0 4px rgba(0, 255, 136, 0.15));
     transition: var(--transition-medium);
     border-radius: 10px;
@@ -62,7 +62,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 4rem;
+    margin-left: 8rem;
 }
 
 .nav-links {
@@ -132,48 +132,6 @@
     letter-spacing: 3px;
 }
 
-/* Partner Logos - Absolute Right Corner */
-.partner-logos-nav {
-    position: fixed;
-    right: 0.75rem;
-    top: 0;
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    padding: 0.5rem 0 0.5rem 0;
-    z-index: 100;
-}
-
-.nav-partner-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.25rem;
-}
-
-.nav-partner-label {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.65rem;
-    color: var(--green-neon);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-weight: 700;
-    text-shadow: 0 0 6px rgba(0, 255, 136, 0.3);
-}
-
-.nav-partner-logo {
-    max-height: 60px;
-    width: auto;
-    object-fit: contain;
-    filter: brightness(1.2) drop-shadow(0 0 8px rgba(0, 255, 136, 0.4));
-    transition: var(--transition-medium);
-}
-
-.nav-partner-logo:hover {
-    filter: brightness(1.4) drop-shadow(0 0 12px rgba(0, 255, 136, 0.6));
-    transform: scale(1.06);
-}
-
 /* Mobile Menu */
 .mobile-menu-wrapper {
     position: absolute;
@@ -209,16 +167,9 @@
 
 @media (max-width: 768px) {
     .nav-wrapper {
-        padding: 0.5rem 0.5rem;
-        justify-content: space-between;
-        height: auto;
-        min-height: 55px;
-        flex-wrap: nowrap;
-        position: relative;
-        overflow: visible;
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
+        padding: 0.75rem 1rem;
+        justify-content: center;
+        min-height: 50px;
     }
 
     /* Keep logos visible but smaller */
@@ -230,6 +181,7 @@
         flex-shrink: 1;
         min-width: 0;
         max-width: fit-content;
+        margin-right: auto;
     }
 
     .nav-college-logo {
@@ -237,59 +189,17 @@
         min-width: 0;
     }
 
-    /* Show partner logos on mobile with adjusted styling */
-    .partner-logos-nav:not(.partner-logos-mobile) {
-        display: none;
-    }
-
-    .partner-logos-mobile {
-        display: flex;
-        position: static;
-        transform: none;
-        gap: 0.25rem;
-        padding: 0;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-items: center;
-        flex-shrink: 2;
-        flex-grow: 0;
-        min-width: 0;
-    }
-
-    .partner-logos-mobile .nav-partner-item {
-        flex-direction: row;
-        align-items: center;
-        gap: 0.15rem;
-        min-width: 0;
-    }
-
-    .partner-logos-mobile .nav-partner-item>div {
-        display: flex;
-        gap: 0.15rem !important;
-        align-items: center;
-    }
-
-    .partner-logos-mobile .nav-partner-label {
-        display: none;
-    }
-
-    .partner-logos-mobile .nav-partner-logo {
-        max-height: 26px !important;
-        padding: 0.2rem !important;
-        border-radius: 4px !important;
-    }
-
     /* Hide center nav links on mobile */
     .nav-center-wrapper {
         display: none;
     }
 
-    /* Fixed position hamburger button - stays in place when menu opens */
+    /* Fixed position hamburger button */
     .mobile-menu-wrapper {
-        position: static;
-        transform: none;
-        margin-left: 0;
-        flex-shrink: 0;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     .mobile-menu-btn {
@@ -310,17 +220,8 @@
 
 @media (max-width: 480px) {
     .nav-wrapper {
-        padding: 0.4rem 0.6rem;
-        min-height: 50px;
-    }
-
-    .college-logos-nav {
-        gap: 0.25rem;
-        max-width: 65%;
-    }
-
-    .nav-college-logo {
-        max-height: 28px;
+        padding: 0.5rem 0.75rem;
+        min-height: 45px;
     }
 
     .mobile-menu-btn {
@@ -330,19 +231,11 @@
     }
 }
 
+
 @media (max-width: 390px) {
     .nav-wrapper {
         padding: 0.35rem 0.5rem;
-        min-height: 48px;
-    }
-
-    .college-logos-nav {
-        gap: 0.2rem;
-        max-width: 70%;
-    }
-
-    .nav-college-logo {
-        max-height: 26px;
+        min-height: 45px;
     }
 }
 
@@ -350,14 +243,6 @@
     .nav-wrapper {
         padding: 0.3rem 0.5rem;
         min-height: 45px;
-    }
-
-    .college-logos-nav {
-        gap: 0.15rem;
-    }
-
-    .nav-college-logo {
-        max-height: 24px;
     }
 
     .mobile-menu-btn {
@@ -369,10 +254,6 @@
 @media (max-width: 320px) {
     .nav-wrapper {
         padding: 0.25rem 0.4rem;
-    }
-
-    .nav-college-logo {
-        max-height: 22px;
     }
 
     .mobile-menu-btn {
