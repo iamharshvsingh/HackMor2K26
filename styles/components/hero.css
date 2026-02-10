@@ -218,11 +218,12 @@
 /* ID Overrides for Specificity */
 #right-content-panel {
     align-self: flex-start !important;
-    margin-top: 12rem !important;
+    margin-top: 2rem !important;
     width: 320px !important;
-    /* Match left side */
     display: flex !important;
-    justify-content: center !important;
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    align-items: center !important;
 }
 
 .hero-right-content {
@@ -231,7 +232,6 @@
     bottom: auto;
     z-index: 10;
     flex-shrink: 0;
-    /* Styles now handled by ID above for desktop */
 }
 
 
@@ -1966,6 +1966,278 @@
     text-transform: uppercase;
     letter-spacing: 1.5px;
     text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+/* ============================================
+   SHORTLISTED TEAMS CARD
+   ============================================ */
+
+.shortlisted-teams-card {
+    background: linear-gradient(145deg, #050a18 0%, #0c122b 50%, #050a18 100%);
+    backdrop-filter: blur(25px);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 24px;
+    padding: 1.5rem 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-width: 260px;
+    max-width: 300px;
+    transition: all 0.4s ease;
+    box-shadow:
+        0 0 40px rgba(0, 0, 0, 0.8),
+        inset 0 0 60px rgba(255, 215, 0, 0.03);
+}
+
+.shortlisted-teams-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 50% 120%, rgba(255, 215, 0, 0.1), transparent 70%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.15;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+}
+
+/* Fireworks Canvas & Atmospheric Effects */
+.firework-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+#fireworksCanvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.smoke-haze {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255, 215, 0, 0.08), transparent 80%);
+    filter: blur(40px);
+    opacity: 0.4;
+    animation: smoke-drift 10s ease-in-out infinite alternate;
+}
+
+@keyframes smoke-drift {
+    from {
+        transform: translate(-10%, -10%) scale(1);
+    }
+
+    to {
+        transform: translate(10%, 10%) scale(1.2);
+    }
+}
+
+/* Hover lift matches other hero cards */
+.shortlisted-teams-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 215, 0, 0.6);
+    box-shadow:
+        0 0 50px rgba(255, 215, 0, 0.2),
+        0 0 80px rgba(0, 0, 0, 0.6);
+}
+
+.shortlisted-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.trophy-animation {
+    padding: 0.5rem;
+    animation: holographic-float 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.4));
+    position: relative;
+}
+
+.trophy-svg {
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
+    animation: icon-glimmer 2s linear infinite;
+}
+
+@keyframes holographic-float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(2deg);
+    }
+}
+
+@keyframes icon-glimmer {
+
+    0%,
+    100% {
+        opacity: 0.8;
+        filter: brightness(1);
+    }
+
+    50% {
+        opacity: 1;
+        filter: brightness(1.3);
+    }
+}
+
+@keyframes trophy-bounce {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
+    }
+
+    50% {
+        transform: translateY(-10px) scale(1.1);
+        filter: drop-shadow(0 0 25px rgba(255, 215, 0, 1));
+    }
+}
+
+.shortlisted-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+    animation: title-pulse 2s ease-in-out infinite;
+}
+
+@keyframes title-pulse {
+
+    0%,
+    100% {
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+
+    50% {
+        text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+    }
+}
+
+.shortlisted-subtitle {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.85rem;
+    color: rgba(255, 215, 0, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.shortlisted-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.6), transparent);
+    margin: 0.75rem 0;
+    position: relative;
+}
+
+.shortlisted-divider::after {
+    content: '★';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffd700;
+    font-size: 1.2rem;
+    background: rgba(10, 10, 15, 0.9);
+    padding: 0 0.5rem;
+    animation: star-twinkle 2s ease-in-out infinite;
+}
+
+@keyframes star-twinkle {
+
+    0%,
+    100% {
+        opacity: 0.6;
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+    }
+
+    50% {
+        opacity: 1;
+        text-shadow: 0 0 15px rgba(255, 215, 0, 1);
+    }
+}
+
+.shortlisted-message {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.4;
+    margin: 0 0 0.75rem 0;
+    font-weight: 500;
+}
+
+/* Shortlisted Button */
+.btn-shortlisted {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+    border: none;
+    color: #0a0a0f;
+    padding: 0.7rem 1.2rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Rajdhani', sans-serif;
+    box-shadow:
+        0 0 20px rgba(255, 215, 0, 0.4),
+        0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    width: 100%;
+}
+
+.btn-shortlisted::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-shortlisted:hover::before {
+    left: 100%;
+}
+
+.btn-shortlisted:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 0 30px rgba(255, 215, 0, 0.6),
+        0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-shortlisted svg {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2.5;
 }
 
 /* ============================================
